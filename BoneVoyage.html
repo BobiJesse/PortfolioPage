@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Bone Voyage - Jesse Hirvonen Portfolio</title>
+    <link rel="icon" href="Kuvat/Favicon_Penguin.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- chatGPT helped with meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jesse Hirvonen - Game developer and designer portfolio showcasing projects, 3D art, and game design work.">
+    <meta name="keywords" content="game development, game design, Unity, Unreal Engine, Blender, portfolio, indie games, Jesse Hirvonen">
+    <meta name="author" content="Jesse Hirvonen">
+    <meta name="robots" content="index, follow">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Lopputyyli.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+
+    <div id="projectcontainer" class="container-fluid">
+
+        <section class="video-hero">
+
+            <div class="video-overlay"></div>
+
+            <video id="hero-video" autoplay muted loop playsinline class="hero-video">
+                <source src="Videot/BoneVoyage_Clip.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-hero-content">
+
+                <h1 id="project-main-name">Bone Voyage</h1>
+
+                <div class="text-area-button">
+
+                    <a class="itch-link" target="_blank" href="https://t0kiko.itch.io/bonelo">
+                        <i class="fa-brands fa-itch-io"></i>
+                        Itch.io
+                    </a>
+
+                    <a class="itch-link" target="_blank" href="https://github.com/BobiJesse/BoneVoyage_Scripts">
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="project-container">
+            <div class="project-image-container">
+                <iframe class="iFrame" src="https://www.youtube.com/embed/ZBR0xkBTLhk" allowfullscreen></iframe>
+            </div>
+
+            <div class="project-info-container">
+                <div class="text-area">
+                    <h1>Bone Voyage</h1>
+                    <p>The wizard sent out an urgent message as a paper plane. Fly around the world against all odds and obstacles to deliver it. Bone Voyage was made in the Xamk Game Jam 2025 Fall</p>
+                </div>
+                <a class="itch-link" href="https://t0kiko.itch.io/bonelo" target="_blank">
+                    <i class="fa-brands fa-itch-io"></i>
+                Open Itch.io Page
+                </a>
+            </div>
+        </div>
+
+        <div class="project-container-reverse">
+            <div class="project-image-container">
+                <img src="Kuvat/Bone_Voyage_Skeleton.png" alt="Paper airplane flying and dodging bones that are shot from skeleton heads">
+            </div>
+
+            <div class="project-info-container">
+                <div class="text-area-project">
+                    <h1>My Responsibilities</h1>
+                    <p>-Programmer (Gliding mechanics, Camera controls, Player script, Boundaries, Asteroids)</p>
+                    <p>-Github management</p>
+                    <p>-Level design</p>
+                    <p>-Audio system</p>
+                </div>
+                <a class="itch-link" href="https://github.com/BobiJesse/BoneVoyage_Scripts" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                Scripts in GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+
+
+
+    <script>
+        const burger = document.querySelector(".hamburger-button");
+        const dropdown = document.getElementById("hamburger-dropdown");
+
+        burger.addEventListener("click", () => {
+            dropdown.style.display =
+                dropdown.style.display === "block" ? "none" : "block";
+        });
+    </script>
+
+    <!-- footer fetcher-->
+    <script>
+        fetch("Footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
+
+    <!-- navbar fetcher-->
+    <script>
+        fetch("Navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+
+                highlightCurrentPage();
+                setupHamburgerMenu();
+            });
+
+        function highlightCurrentPage() {
+            const currentPage = window.location.pathname.split("/").pop();
+
+            document.querySelectorAll(".nav-link").forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.id = "current-page";
+                }
+            });
+
+            document.querySelectorAll(".hamburger-dropdown a").forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.id = "current-page-hamburger";
+                }
+            });
+        }
+
+        function setupHamburgerMenu() {
+            const burger = document.querySelector(".hamburger-button");
+            const dropdown = document.getElementById("hamburger-dropdown");
+
+            if (burger && dropdown) {
+                burger.addEventListener("click", () => {
+                    dropdown.style.display =
+                        dropdown.style.display === "block" ? "none" : "block";
+                });
+            }
+        }
+    </script>
+
+    <!-- video observer play/pause-->
+    <script>
+        const heroVideo = document.getElementById("hero-video");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroVideo.play();
+                } else {
+                    heroVideo.pause();
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        observer.observe(heroVideo);
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
