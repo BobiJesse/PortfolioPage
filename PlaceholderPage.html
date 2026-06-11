@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Jesse Hirvonen Portfolio</title>
+	<link rel="icon" href="Kuvat/Favicon_Penguin.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- chatGPT helped with meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jesse Hirvonen - Game developer and designer portfolio showcasing projects, 3D art, and game design work.">
+    <meta name="keywords" content="game development, game design, Unity, Unreal Engine, Blender, Portfolio, Programmer, Gamedev, indie games, Jesse Hirvonen">
+    <meta name="author" content="Jesse Hirvonen">
+    <meta name="robots" content="index, follow">
+	
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="Lopputyyli.css">
+  </head>
+  <body>
+  
+  
+  
+  
+  
+
+
+
+<div id="navbar-placeholder"></div>
+
+
+<div id="homecontainer" class="container-fluid">
+    <div class="container text-center wip-page">
+        <h1>Page not ready yet</h1>
+        <p>This page is still being worked on. Check back later!</p>
+        <button class="back-button" onclick="history.back()">
+            Go back
+        </button>
+    </div>
+</div>
+
+
+<div id="footer-placeholder"></div>
+
+
+
+<!-- chatGPT made script -->
+<script>
+  const burger = document.querySelector(".hamburger-button");
+  const dropdown = document.getElementById("hamburger-dropdown");
+
+  burger.addEventListener("click", () => {
+    dropdown.style.display = 
+      dropdown.style.display === "block" ? "none" : "block";
+  });
+</script>
+
+<script>
+    fetch("Footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+</script>
+
+<script>
+    fetch("Navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+
+            highlightCurrentPage();
+            setupHamburgerMenu();
+        });
+
+    function highlightCurrentPage() {
+        const currentPage = window.location.pathname.split("/").pop();
+
+        document.querySelectorAll(".nav-link").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.id = "current-page";
+            }
+        });
+
+        document.querySelectorAll(".hamburger-dropdown a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.id = "current-page-hamburger";
+            }
+        });
+    }
+
+    function setupHamburgerMenu() {
+        const burger = document.querySelector(".hamburger-button");
+        const dropdown = document.getElementById("hamburger-dropdown");
+
+        if (burger && dropdown) {
+            burger.addEventListener("click", () => {
+                dropdown.style.display =
+                    dropdown.style.display === "block" ? "none" : "block";
+            });
+        }
+    }
+</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
