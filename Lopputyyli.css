@@ -504,7 +504,7 @@ a.card-link:hover {
   background-color: rgba(0, 0, 0, 0.87);
   backdrop-filter: blur(5px);
   width: 40vw;
-  height: 40vh;
+  min-height: 40vh;
 }
 
 .project-image-container img
@@ -526,7 +526,7 @@ a.card-link:hover {
   background-color: rgba(0, 0, 0, 0.593);
   backdrop-filter: blur(5px);
   width: 60vw;
-  height: 40vh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -538,6 +538,19 @@ a.card-link:hover {
   color: white;
   font-size: 26px;
   text-align: center;
+}
+
+.responsibility-list 
+{
+    color: white;
+    font-size: 20px;
+    line-height: 1.8;
+    padding-left: 25px;
+}
+
+.responsibility-list li 
+{
+    margin-bottom: 10px;
 }
 
 .itch-link {
