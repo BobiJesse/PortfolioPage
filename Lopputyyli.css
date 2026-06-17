@@ -885,6 +885,11 @@ hr
   color: white;
 }
 
+#main-title
+{
+  color: darkorange;
+}
+
 #project-main-name
 {
   font-size: 100px;
