@@ -76,6 +76,12 @@ body.navbar-scroll-fade .navbar {
   border: none;
   color: white;
   font-size: 30px;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.hamburger-button.open {
+  transform: rotate(90deg);
+  color: darkorange;
 }
 
 .hamburger-button:hover {
@@ -84,16 +90,27 @@ body.navbar-scroll-fade .navbar {
 }
 
 .hamburger-dropdown {
-  display: none;
   position: absolute;
   top: 60px;
   right: 0;
+
   background-color: rgba(0,0,0,0.9);
   width: 200px;
   padding: 20px;
   z-index: 999;
   border-radius: 0 0 0 10px;
   margin-top: 15px;
+
+  opacity: 0;
+  transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(.2, .8, .2, 1);
+}
+
+.hamburger-dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .hamburger-dropdown ul {

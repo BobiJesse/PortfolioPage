@@ -48,20 +48,29 @@ function highlightCurrentPage()
    HAMBURGER MENU
 ========================= */
 
+function closeAllMenus() {
+    document.getElementById("hamburger-dropdown")?.classList.remove("open");
+    document.querySelector(".hamburger-button")?.classList.remove("open");
+
+    document.querySelectorAll(".submenu.open").forEach(s => {
+        s.classList.remove("open");
+    });
+}
+
 function setupHamburgerMenu() {
     const burger = document.querySelector(".hamburger-button");
     const dropdown = document.getElementById("hamburger-dropdown");
 
-    if (!burger || !dropdown)
-        return;
+    if (!burger || !dropdown) return;
 
     burger.addEventListener("click", (event) => {
         event.stopPropagation();
+        dropdown.classList.toggle("open");
+        burger.classList.toggle("open");
 
-        dropdown.style.display =
-            dropdown.style.display === "block"
-                ? "none"
-                : "block";
+        document.querySelectorAll(".submenu.open").forEach(submenu => {
+            submenu.classList.remove("open");
+        });
     });
 
     dropdown.addEventListener("click", (event) => {
@@ -69,22 +78,40 @@ function setupHamburgerMenu() {
     });
 
     document.addEventListener("click", () => {
-        dropdown.style.display = "none";
+        dropdown.classList.remove("open");
+        burger.classList.remove("open");
+
+        document.querySelectorAll(".submenu.open").forEach(submenu => {
+            submenu.classList.remove("open");
+        });
     });
 
     dropdown.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
-            dropdown.style.display = "none";
+            dropdown.classList.remove("open");
+            burger.classList.remove("open");
+
+            document.querySelectorAll(".submenu.open").forEach(submenu => {
+                submenu.classList.remove("open");
+            });
         });
     });
+
+    document.addEventListener("click", closeAllMenus);
 }
 
 function setupSubmenus() {
-    const buttons = document.querySelectorAll(".submenu-toggle");
+    const submenus = document.querySelectorAll(".submenu");
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const submenu = button.parentElement;
+    submenus.forEach(submenu => {
+        const button = submenu.querySelector(".submenu-toggle");
+
+        button.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            submenus.forEach(s => {
+                if (s !== submenu) s.classList.remove("open");
+            });
 
             submenu.classList.toggle("open");
         });
