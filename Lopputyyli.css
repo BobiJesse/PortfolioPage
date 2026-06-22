@@ -35,16 +35,14 @@ html, body {
   flex-direction: row;
   align-items: center;
 
-  background-color: rgba(0, 0, 0, 0);
-  /* Transparent */
-
+  background-color: rgba(0, 0, 0, 1);
   color: white;
 
   transition: background-color 0.35s ease;
 }
 
-.navbar.scrolled {
-  background-color: rgba(0, 0, 0, 1);
+body.navbar-scroll-fade .navbar {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .nav-link {
@@ -723,7 +721,7 @@ a.card-link:hover {
 .about-entry p
 {
   color: darkorange;
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
 }
 

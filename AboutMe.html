@@ -32,7 +32,7 @@
             </div>
             <div id="profile-text">
                 <p>Game Developer Focused on Programming and Design</p>
-                <a id="cv-link" href="https://drive.google.com/file/d/1DKqdLPN14RqgWqdI2pF1ewC_lin9e3pw/view?usp=sharing" target="_blank">
+                <a id="cv-link" href="https://drive.google.com/file/d/1_orpsPSyZmKLRf8PPON_3QFgh5Iod-tg/view?usp=sharing" target="_blank">
                     <i class="fa-solid fa-file-lines"></i>
                 Open CV
                 </a>
@@ -154,68 +154,9 @@
 
 <div id="footer-placeholder"></div>
 
+<script src="script.js"></script>
 
 
-<!-- chatGPT made script -->
-<script>
-  const burger = document.querySelector(".hamburger-button");
-  const dropdown = document.getElementById("hamburger-dropdown");
-
-  burger.addEventListener("click", () => {
-    dropdown.style.display = 
-      dropdown.style.display === "block" ? "none" : "block";
-  });
-</script>
-
-<script>
-    fetch("Footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
-</script>
-
-<script>
-    fetch("Navbar.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("navbar-placeholder").innerHTML = data;
-
-            highlightCurrentPage();
-            setupHamburgerMenu();
-        });
-
-    function highlightCurrentPage() {
-        const currentPage = window.location.pathname.split("/").pop();
-
-        document.querySelectorAll(".nav-link").forEach(link => {
-            if (link.getAttribute("href") === currentPage) {
-                link.id = "current-page";
-            }
-        });
-
-        document.querySelectorAll(".hamburger-dropdown a").forEach(link => {
-            if (link.getAttribute("href") === currentPage) {
-                link.id = "current-page-hamburger";
-            }
-        });
-    }
-
-    function setupHamburgerMenu() {
-        const burger = document.querySelector(".hamburger-button");
-        const dropdown = document.getElementById("hamburger-dropdown");
-
-        if (burger && dropdown) {
-            burger.addEventListener("click", () => {
-                dropdown.style.display =
-                    dropdown.style.display === "block" ? "none" : "block";
-            });
-        }
-    }
-</script>
-
-
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
