@@ -78,9 +78,9 @@ body.navbar-scroll-fade .navbar {
   font-size: 30px;
 }
 
-.hamburger-button:hover
-{
-  background-color: gray;
+.hamburger-button:hover {
+  color: darkorange;
+  background: none;
 }
 
 .hamburger-dropdown {
@@ -106,13 +106,57 @@ body.navbar-scroll-fade .navbar {
   margin-bottom: 12px;
 }
 
-.mhamburger-dropdown a {
+.hamburger-dropdown a {
   color: white;
   font-size: 18px;
 }
 
 .hamburger-dropdown a:hover {
   color: darkorange;
+}
+
+.submenu-content {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.submenu.open .submenu-content {
+  display: block;
+  margin-top: 12px;
+}
+
+.submenu-toggle {
+  display: block;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: none;
+  outline: none;
+
+  color: white;
+  font: inherit;
+  font-size: 18px;
+  line-height: 24px;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.submenu-toggle:hover {
+  color: darkorange;
+}
+
+.arrow {
+  float: right;
+  transition: transform .2s;
+}
+
+.submenu.open .arrow {
+  transform: rotate(180deg);
 }
 
 a:link

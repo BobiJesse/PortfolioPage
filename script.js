@@ -19,6 +19,7 @@ fetch("Navbar.html")
 
         highlightCurrentPage();
         setupHamburgerMenu();
+        setupSubmenus();
         setupNavbarScroll();
     });
 
@@ -47,17 +48,47 @@ function highlightCurrentPage()
    HAMBURGER MENU
 ========================= */
 
-function setupHamburgerMenu() 
-{
+function setupHamburgerMenu() {
     const burger = document.querySelector(".hamburger-button");
     const dropdown = document.getElementById("hamburger-dropdown");
 
-    if (burger && dropdown) {
-        burger.addEventListener("click", () => {
-            dropdown.style.display =
-                dropdown.style.display === "block" ? "none" : "block";
+    if (!burger || !dropdown)
+        return;
+
+    burger.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        dropdown.style.display =
+            dropdown.style.display === "block"
+                ? "none"
+                : "block";
+    });
+
+    dropdown.addEventListener("click", (event) => {
+        event.stopPropagation();
+    });
+
+    document.addEventListener("click", () => {
+        dropdown.style.display = "none";
+    });
+
+    dropdown.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            dropdown.style.display = "none";
         });
-    }
+    });
+}
+
+function setupSubmenus() {
+    const buttons = document.querySelectorAll(".submenu-toggle");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const submenu = button.parentElement;
+
+            submenu.classList.toggle("open");
+        });
+    });
 }
 
 /* =========================
