@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Lopputyyli.css">
 </head>
-<body>
+<body class="navbar-scroll-fade">
     <div id="navbar-placeholder"></div>
 
 
@@ -129,6 +129,7 @@
 
                 highlightCurrentPage();
                 setupHamburgerMenu();
+                setupNavbarScroll();
             });
 
         function highlightCurrentPage() {
@@ -158,6 +159,23 @@
                 });
             }
         }
+    </script>
+
+    <script>
+        function setupNavbarScroll() {
+                const navbar = document.querySelector(".navbar");
+
+                if (!navbar || !document.body.classList.contains("navbar-scroll-fade")) return;
+
+                window.addEventListener("scroll", () => {
+                    const maxScroll = 200;
+                    const scroll = Math.min(window.scrollY, maxScroll);
+
+                    const opacity = scroll / maxScroll;
+
+                    navbar.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+                });
+            }
     </script>
 
     <!-- video observer play/pause-->
