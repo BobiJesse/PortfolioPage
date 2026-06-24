@@ -27,9 +27,13 @@ fetch("Navbar.html")
    CURRENT PAGE
 ========================= */
 
-function highlightCurrentPage() 
-{
-    const currentPage = window.location.pathname.split("/").pop();
+function highlightCurrentPage() {
+    let currentPage = window.location.pathname.split("/").pop();
+
+    // If we're at "/", treat it as index.html
+    if (currentPage === "") {
+        currentPage = "index.html";
+    }
 
     document.querySelectorAll(".nav-link").forEach(link => {
         if (link.getAttribute("href") === currentPage) {
