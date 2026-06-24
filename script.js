@@ -122,8 +122,7 @@ function setupSubmenus() {
    NAVBAR SCROLL
 ========================= */
 
-function setupNavbarScroll() 
-{
+function setupNavbarScroll() {
     const navbar = document.querySelector(".navbar");
 
     if (!navbar || !document.body.classList.contains("navbar-scroll-fade")) return;
@@ -135,6 +134,12 @@ function setupNavbarScroll()
         const opacity = scroll / maxScroll;
 
         navbar.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+
+        if (scroll > 0.7) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
     });
 }
 

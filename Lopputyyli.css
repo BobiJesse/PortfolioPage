@@ -51,10 +51,17 @@ body.navbar-scroll-fade .navbar {
     transition: all 0.25s ease;
 }
 
-    .nav-link:hover {
-        background-color: rgba(255, 140, 0, 0.15);
-        color: darkorange !important;
-    }
+/* Navbar is transparent */
+body.navbar-scroll-fade .navbar:not(.scrolled) .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.80);
+  color: white !important;
+}
+
+/* Navbar has faded in */
+.navbar.scrolled .nav-link:hover {
+  background-color: rgba(255, 140, 0, 0.15);
+  color: darkorange !important;
+}
 
 .collapse
 {
@@ -120,7 +127,8 @@ body.navbar-scroll-fade .navbar {
 }
 
 .hamburger-dropdown li {
-  margin-bottom: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .hamburger-dropdown a {
@@ -133,14 +141,25 @@ body.navbar-scroll-fade .navbar {
 }
 
 .submenu-content {
-  display: none;
   list-style: none;
   padding-left: 20px;
+  margin-top: 0;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translate(-8px);
+
+  transition:
+      max-height .25s cubic-bezier(.2, .8, .2, 1),
+      opacity .3s ease,
+      transform .25s cubic-bezier(.2, .8, .2, 1);
 }
 
 .submenu.open .submenu-content {
-  display: block;
-  margin-top: 12px;
+  max-height: 250px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .submenu-toggle {
@@ -961,6 +980,15 @@ hr
   background-color: darkorange;
   height: 1px;
   width: 75%;
+}
+
+.hamburger-div hr
+{
+  border: 0;
+  background-color: darkorange;
+  height: 1px;
+  width: 100%;
+  margin: 0;
 }
 
 #main-name
