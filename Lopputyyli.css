@@ -1450,6 +1450,25 @@ footer {
   {
     font-size: 32px;
   }
+
+  #project-main-name 
+  {
+    font-size: clamp(2.25rem, 8vw, 3.75rem);
+  }
+
+  .left-image-box 
+  {
+    height: 30vh;
+  }
+
+  .video-hero 
+  {
+    height: 30vh;
+  }
+
+    .video-hero .itch-link {
+      padding: 3px 9px;
+    }
 }
 
 @media screen and (max-width: 420px)
