@@ -54,7 +54,7 @@ body.navbar-scroll-fade .navbar {
 /* Navbar is transparent */
 body.navbar-scroll-fade .navbar:not(.scrolled) .nav-link:hover {
   background-color: rgba(0, 0, 0, 0.80);
-  color: white !important;
+  color: darkorange !important;
 }
 
 /* Navbar has faded in */
@@ -716,6 +716,10 @@ a.card-link:hover {
   background: rgba(0, 0, 0, 0.3);
 
   z-index: 1;
+}
+
+.light-overlay {
+  background: rgba(0, 0, 0, 0);
 }
 
 .video-hero-content
