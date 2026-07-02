@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Binary Break - Jesse Hirvonen Portfolio</title>
+    <link rel="icon" href="Kuvat/Favicon_Penguin.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="Kuvat/Background.jpg" as="image" fetchpriority="high">
+    <!-- chatGPT helped with meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jesse Hirvonen - Game developer and designer portfolio showcasing projects, 3D art, and game design work.">
+    <meta name="keywords"
+        content="game development, game design, Unity, Unreal Engine, Blender, portfolio, indie games, Jesse Hirvonen">
+    <meta name="author" content="Jesse Hirvonen">
+    <meta name="robots" content="index, follow">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Lopputyyli.css">
+</head>
+
+<body class="navbar-scroll-fade">
+    <div id="background"></div>
+
+    <div id="navbar-placeholder"></div>
+
+
+    <div id="projectcontainer" class="container-fluid">
+
+        <section class="video-hero">
+
+            <div class="video-overlay"></div>
+
+            <video id="hero-video" autoplay muted loop playsinline preload="auto" class="hero-video">
+                <source src="Videot/BinaryBreak_Background.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-hero-content">
+
+                <h1 id="project-main-name">Binary Break</h1>
+
+                <div class="text-area-button">
+
+                    <a class="itch-link" target="_blank" href="https://t0kiko.itch.io/binary-break">
+                        <i class="fa-brands fa-itch-io"></i>
+                        Itch.io
+                    </a>
+
+                    <a class="itch-link" target="_blank" href="https://github.com/BobiJesse/BinaryBreak_Scripts">
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="project-container">
+            <div class="project-image-container">
+                <iframe class="iFrame" src="https://www.youtube.com/embed/iqGx8mC1ov4" allowfullscreen></iframe>
+            </div>
+
+            <div class="project-info-container">
+                <div class="text-area">
+                    <h1>Binary Break</h1>
+                    <p>A 2D puzzle game where players take on the role of a computer virus infiltrating a secure database. Avoid antivirus
+                    programs, navigate digital environments, and solve logic-based lock puzzles using AND, OR, and XOR gates to progress
+                    deeper into the system.</p>
+                </div>
+                <a class="itch-link" href="https://t0kiko.itch.io/binary-break" target="_blank">
+                    <i class="fa-brands fa-itch-io"></i>
+                    Open Itch.io Page
+                </a>
+            </div>
+        </div>
+
+        <div class="project-container-reverse">
+            <div class="project-image-container">
+                <img src="Kuvat/BinaryBreak_Puzzle.png"
+                    alt="Logical gate puzzle that has been answered wrong and is red" loading="lazy">
+            </div>
+
+            <div class="project-info-container">
+                <div class="text-area-project">
+                    <h1>My Responsibilities</h1>
+
+                    <ul class="responsibility-list">
+                        <li>Implemented the logic gate puzzle system, including AND, OR, XOR, and NOT gates</li>
+                        <li>Designed the game level and interactive puzzle locks</li>
+                        <li>Developed the game manager, including the timer and time-based penalties and rewards</li>
+                        <li>Implemented the puzzle manager with progressive difficulty scaling</li>
+                        <li>Developed the player's 2D rail movement system</li>
+                        <li>Created visual effects for the game environment</li>
+                        <li>Implemented audio playback scripts and managed the Unity Audio Mixer setup</li>
+                        <li>Maintained the project's GitHub repository and version control practices</li>
+                    </ul>
+                </div>
+                <a class="itch-link" href="https://github.com/BobiJesse/BinaryBreak_Scripts" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    Scripts in GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
