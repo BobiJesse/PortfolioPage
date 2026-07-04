@@ -137,7 +137,7 @@ function setupNavbarScroll() {
 
         const opacity = scroll / maxScroll;
 
-        navbar.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        navbar.style.setProperty("--navbar-opacity", opacity);
 
         if (scroll > 0.7) {
             navbar.classList.add("scrolled");
