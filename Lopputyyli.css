@@ -740,6 +740,8 @@ a.card-link:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: black;
 }
 
 .hero-video {
